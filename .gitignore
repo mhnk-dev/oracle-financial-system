@@ -1,0 +1,7 @@
+# Environment
+.env
+
+# Oracle installers
+installers/apex-latest/*
+installers/*.zip
+!installers/apex-latest/.gitkeep

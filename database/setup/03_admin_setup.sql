@@ -1,0 +1,1 @@
+--create or replace context app_context using ofs_app.pkg_session;

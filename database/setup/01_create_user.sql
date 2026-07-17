@@ -1,0 +1,1 @@
+create user ofs_app identified by ofs_app123;
