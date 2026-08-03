@@ -7,3 +7,8 @@ grant create trigger to ofs_app;
 
 alter user ofs_app
    quota unlimited on users;
+
+grant select on v_$session to ofs_app;
+grant select on v_$sesstat to ofs_app;
+grant select on v_$statname to ofs_app;
+grant select on v_$open_cursor to ofs_app;
