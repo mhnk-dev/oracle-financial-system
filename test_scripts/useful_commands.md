@@ -229,3 +229,155 @@ full=y \
 dumpfile=full_backup.dmp \
 logfile=restore_backup.log
 ```
+
+# SQL Plus
+
+```bash
+docker exec -it oracle-financial-db sqlplus ofs_app/ofs_app123@localhost:1521/FREEPDB1
+```
+
+# Execution Plan
+
+```bash
+SET TIMING ON;
+```
+
+```bash
+EXPLAIN PLAN FOR
+SELECT
+    accounts.balance,
+    customers.first_name,
+    customers.last_name
+FROM
+    accounts,
+    customers
+WHERE
+    accounts.customer_id = customers.customer_id
+```
+
+```bash
+SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY);
+```
+
+
+# Giving Oracle Hint
+
+```bash
+SELECT /*+ USE_NL(a c) */
+    a.balance,
+    c.first_name,
+    c.last_name
+FROM accounts a
+JOIN customers c
+    ON a.customer_id = c.customer_id;
+```
+
+```bash
+SELECT /*+ FULL(a) */
+       a.account_id,
+       a.account_name,
+       a.balance
+FROM accounts a;
+```
+
+# Giving REST Access
+
+```bash
+BEGIN
+    DBMS_NETWORK_ACL_ADMIN.APPEND_HOST_ACE(
+        host       => 'ords',
+        lower_port => your port,
+        upper_port => your port,
+        ace        => XS$ACE_TYPE(
+            privilege_list => XS$NAME_LIST('connect'),
+            principal_name => APEX_APPLICATION.G_FLOW_SCHEMA_OWNER,
+            principal_type => XS_ACL.PTYPE_DB
+        )
+    );
+END;
+```
+
+```bash
+BEGIN
+    DBMS_NETWORK_ACL_ADMIN.APPEND_HOST_ACE(
+        host => 'your local ip',
+        ace  => XS$ACE_TYPE(
+            privilege_list => XS$NAME_LIST('jdwp'),
+            principal_name => 'OFS_APP',
+            principal_type => XS_ACL.PTYPE_DB
+        )
+    );
+END;
+```
+
+```bash
+BEGIN
+    DBMS_NETWORK_ACL_ADMIN.APPEND_HOST_ACE(
+        host => 'your site address',
+        ace  => XS$ACE_TYPE(
+            privilege_list => XS$NAME_LIST('connect', 'resolve'),
+            principal_name => 'APEX_260100',
+            principal_type => XS_ACL.PTYPE_DB
+        )
+    );
+END;
+```
+
+```bash
+BEGIN
+    DBMS_NETWORK_ACL_ADMIN.APPEND_HOST_ACE(
+        host => 'host.docker.internal',
+        ace  => XS$ACE_TYPE(
+            privilege_list => XS$NAME_LIST('resolve'),
+            principal_name => 'APEX_260100',
+            principal_type => XS_ACL.PTYPE_DB
+        )
+    );
+END;
+
+BEGIN
+    DBMS_NETWORK_ACL_ADMIN.APPEND_HOST_ACE(
+        host       => 'host.docker.internal',
+        lower_port => your port,
+        upper_port => your port,
+        ace        => XS$ACE_TYPE(
+            privilege_list => XS$NAME_LIST('connect'),
+            principal_name => 'APEX_260100',
+            principal_type => XS_ACL.PTYPE_DB
+        )
+    );
+END;
+```
+
+
+```bash
+BEGIN
+    DBMS_NETWORK_ACL_ADMIN.APPEND_HOST_ACE(
+        host => 'generativelanguage.googleapis.com',
+        ace  => XS$ACE_TYPE(
+            privilege_list => XS$NAME_LIST('resolve'),
+            principal_name => 'APEX_260100',
+            principal_type => XS_ACL.PTYPE_DB
+        )
+    );
+END;
+
+BEGIN
+    DBMS_NETWORK_ACL_ADMIN.APPEND_HOST_ACE(
+        host       => 'generativelanguage.googleapis.com',
+        lower_port => your port,
+        upper_port => your port,
+        ace        => XS$ACE_TYPE(
+            privilege_list => XS$NAME_LIST('connect'),
+            principal_name => 'APEX_260100',
+            principal_type => XS_ACL.PTYPE_DB
+        )
+    );
+END;
+```
+
+```bash
+BEGIN
+    DBMS_DEBUG_JDWP.CONNECT_TCP('host.docker.internal', 'your port');
+end;
+```
