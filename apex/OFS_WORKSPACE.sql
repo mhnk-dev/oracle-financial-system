@@ -26,7 +26,7 @@ end;
 prompt  WORKSPACE 6401353413051332
 --
 -- Workspace, User Group, User, and Team Development Export:
---   Date and Time:   14:01 Monday September 14, 2026
+--   Date and Time:   12:53 Tuesday October 20, 2026
 --   Exported By:     ADMIN
 --   Export Type:     Workspace Export
 --   Version:         26.1.0
@@ -121,7 +121,7 @@ wwv_flow_fnd_user_api.create_fnd_user (
   p_developer_privs              => 'ADMIN:CREATE:DATA_LOADER:EDIT:HELP:MONITOR:SQL:DR_ADMIN',
   p_default_schema               => 'OFS_APP',
   p_account_locked               => 'N',
-  p_account_expiry               => to_date('202609010949','YYYYMMDDHH24MI'),
+  p_account_expiry               => to_date('202610200947','YYYYMMDDHH24MI'),
   p_failed_access_attempts       => 0,
   p_change_password_on_first_use => 'Y',
   p_first_password_use_occurred  => 'Y',
@@ -146,7 +146,7 @@ wwv_flow_fnd_user_api.create_fnd_user (
   p_developer_privs              => 'CREATE:EDIT:HELP:MONITOR:SQL:DATA_LOADER:DR_ADMIN',
   p_default_schema               => 'OFS_APP',
   p_account_locked               => 'N',
-  p_account_expiry               => to_date('202609010949','YYYYMMDDHH24MI'),
+  p_account_expiry               => to_date('202610200946','YYYYMMDDHH24MI'),
   p_failed_access_attempts       => 0,
   p_change_password_on_first_use => 'Y',
   p_first_password_use_occurred  => 'Y',
@@ -187,6 +187,20 @@ begin
     p_id => 14001441542023847,
     p_user_id => 6600554799119047,
     p_password => '037008ECF130D2F04642989A48C271D3A992F219630FC0D710A865BD4CEF0D063D02D84EC729A5E6D4B015A8FAD4F7ADAA38FB674F5C948AC8AA2B48400FB6DA');
+end;
+/
+begin
+  wwv_imp_workspace.create_password_history (
+    p_id => 18603052557132468,
+    p_user_id => 6600554799119047,
+    p_password => '037008ECF130D2F04642989A48C271D3A992F219630FC0D710A865BD4CEF0D063D02D84EC729A5E6D4B015A8FAD4F7ADAA38FB674F5C948AC8AA2B48400FB6DA');
+end;
+/
+begin
+  wwv_imp_workspace.create_password_history (
+    p_id => 18603333014137104,
+    p_user_id => 6401222880051332,
+    p_password => '8471264AF30CF8CC34FEEBC96CC881D883458013D2E6333E6946DB42CCCE9D652619B06F7F8527A19268B5E853D345E0D4B2D0F6845FC67DE4421BC2140660B8');
 end;
 /
 begin
@@ -418,7 +432,7 @@ begin
     p_id => 8417274537881176,
     p_user_id => 'OFS_WORKSPACE_DEVELOPER1',
     p_preference_name => 'PD_PE_CODE_EDITOR_DLG_W',
-    p_attribute_value => '1016',
+    p_attribute_value => '1064',
     p_tenant_id => '');
 end;
 /
@@ -643,7 +657,7 @@ begin
     p_id => 8415132706557387,
     p_user_id => 'OFS_WORKSPACE_DEVELOPER1',
     p_preference_name => 'F4000_203906404237009921_SPLITTER_STATE',
-    p_attribute_value => '587:false',
+    p_attribute_value => '582:false',
     p_tenant_id => '');
 end;
 /
@@ -1145,46 +1159,7 @@ begin
     p_auth_method => 'Internal Authentication',
     p_app => 4100,
     p_owner => 'APEX_260100',
-    p_access_date => to_date('202608241831','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202608241931','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202608241933','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202608241937','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610141946','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -1197,46 +1172,7 @@ begin
     p_auth_method => 'Oracle APEX Accounts',
     p_app => 100,
     p_owner => 'OFS_APP',
-    p_access_date => to_date('202608251213','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608251221','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608251221','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608251222','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610141946','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -1249,7 +1185,20 @@ begin
     p_auth_method => 'Internal Authentication',
     p_app => 4100,
     p_owner => 'APEX_260100',
-    p_access_date => to_date('202608261101','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610150927','YYYYMMDDHH24MI'),
+    p_ip_address => '172.18.0.1',
+    p_remote_user => 'APEX_PUBLIC_USER',
+    p_auth_result => 0,
+    p_custom_status_text => '');
+end;
+/
+begin
+  wwv_imp_workspace.create_user_access_log1$ (
+    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
+    p_auth_method => 'Internal Authentication',
+    p_app => 4100,
+    p_owner => 'APEX_260100',
+    p_access_date => to_date('202610141802','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -1262,7 +1211,7 @@ begin
     p_auth_method => 'Oracle APEX Accounts',
     p_app => 100,
     p_owner => 'OFS_APP',
-    p_access_date => to_date('202608261101','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610141802','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -1275,20 +1224,7 @@ begin
     p_auth_method => 'Internal Authentication',
     p_app => 4100,
     p_owner => 'APEX_260100',
-    p_access_date => to_date('202608261203','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202608281212','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610131026','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -1301,7 +1237,7 @@ begin
     p_auth_method => 'Oracle APEX Accounts',
     p_app => 100,
     p_owner => 'OFS_APP',
-    p_access_date => to_date('202608281213','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610131026','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -1310,11 +1246,50 @@ end;
 /
 begin
   wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_ADMIN',
+    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
     p_auth_method => 'Internal Authentication',
     p_app => 4100,
     p_owner => 'APEX_260100',
-    p_access_date => to_date('202609010949','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610141812','YYYYMMDDHH24MI'),
+    p_ip_address => '172.18.0.1',
+    p_remote_user => 'APEX_PUBLIC_USER',
+    p_auth_result => 0,
+    p_custom_status_text => '');
+end;
+/
+begin
+  wwv_imp_workspace.create_user_access_log1$ (
+    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
+    p_auth_method => 'Internal Authentication',
+    p_app => 4100,
+    p_owner => 'APEX_260100',
+    p_access_date => to_date('202610061021','YYYYMMDDHH24MI'),
+    p_ip_address => '172.18.0.1',
+    p_remote_user => 'APEX_PUBLIC_USER',
+    p_auth_result => 0,
+    p_custom_status_text => '');
+end;
+/
+begin
+  wwv_imp_workspace.create_user_access_log1$ (
+    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
+    p_auth_method => 'Oracle APEX Accounts',
+    p_app => 100,
+    p_owner => 'OFS_APP',
+    p_access_date => to_date('202610061022','YYYYMMDDHH24MI'),
+    p_ip_address => '172.18.0.1',
+    p_remote_user => 'APEX_PUBLIC_USER',
+    p_auth_result => 0,
+    p_custom_status_text => '');
+end;
+/
+begin
+  wwv_imp_workspace.create_user_access_log2$ (
+    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
+    p_auth_method => 'Internal Authentication',
+    p_app => 4100,
+    p_owner => 'APEX_260100',
+    p_access_date => to_date('202610200945','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 3,
@@ -1322,12 +1297,12 @@ begin
 end;
 /
 begin
-  wwv_imp_workspace.create_user_access_log1$ (
+  wwv_imp_workspace.create_user_access_log2$ (
     p_login_name => 'OFS_WORKSPACE_ADMIN',
     p_auth_method => 'Internal Authentication',
     p_app => 4100,
     p_owner => 'APEX_260100',
-    p_access_date => to_date('202609010949','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610200947','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -1335,51 +1310,12 @@ begin
 end;
 /
 begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_DEV',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609011520','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 1,
-    p_custom_status_text => 'Invalid Login Credentials');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_DEV',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609011520','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 1,
-    p_custom_status_text => 'Invalid Login Credentials');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_ADMIN',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609011523','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
+  wwv_imp_workspace.create_user_access_log2$ (
     p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
     p_auth_method => 'Internal Authentication',
     p_app => 4100,
     p_owner => 'APEX_260100',
-    p_access_date => to_date('202609011952','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610200948','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -1387,25 +1323,12 @@ begin
 end;
 /
 begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609011955','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
+  wwv_imp_workspace.create_user_access_log2$ (
     p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
     p_auth_method => 'Oracle APEX Accounts',
     p_app => 100,
     p_owner => 'OFS_APP',
-    p_access_date => to_date('202608211223','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610200948','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -1413,12 +1336,12 @@ begin
 end;
 /
 begin
-  wwv_imp_workspace.create_user_access_log1$ (
+  wwv_imp_workspace.create_user_access_log2$ (
     p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
     p_auth_method => 'Internal Authentication',
     p_app => 4100,
     p_owner => 'APEX_260100',
-    p_access_date => to_date('202608241330','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610201234','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -1426,12 +1349,12 @@ begin
 end;
 /
 begin
-  wwv_imp_workspace.create_user_access_log1$ (
+  wwv_imp_workspace.create_user_access_log2$ (
     p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
     p_auth_method => 'Internal Authentication',
     p_app => 4100,
     p_owner => 'APEX_260100',
-    p_access_date => to_date('202608241510','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610200946','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -1439,38 +1362,12 @@ begin
 end;
 /
 begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608241835','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608241836','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
+  wwv_imp_workspace.create_user_access_log2$ (
     p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
     p_auth_method => 'Internal Authentication',
     p_app => 4100,
     p_owner => 'APEX_260100',
-    p_access_date => to_date('202608241849','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610200946','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -1478,51 +1375,12 @@ begin
 end;
 /
 begin
-  wwv_imp_workspace.create_user_access_log1$ (
+  wwv_imp_workspace.create_user_access_log2$ (
     p_login_name => 'OFS_WORKSPACE_ADMIN',
     p_auth_method => 'Internal Authentication',
     p_app => 4100,
     p_owner => 'APEX_260100',
-    p_access_date => to_date('202608241850','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_ADMIN',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202608241856','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202608241857','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609010949','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610200946','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 3,
@@ -1530,519 +1388,12 @@ begin
 end;
 /
 begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609010949','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'ADMIN',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608241246','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 1,
-    p_custom_status_text => 'Invalid Login Credentials');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202608261459','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_ADMIN',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609010950','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609010950','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609010950','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608241331','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202608241848','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608241906','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608241943','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608251157','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608251205','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608251220','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608261502','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202608261516','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_ADMIN',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609011910','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609011934','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_ADMIN',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202608241326','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608241510','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608241838','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202608251155','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202608260905','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202608260906','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202608261456','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609010947','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 3,
-    p_custom_status_text => 'Password Expired');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609010947','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 3,
-    p_custom_status_text => 'Password Expired');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log1$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202609011953','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202609091646','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609132053','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609091645','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609092053','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202609092053','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609092056','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202609141259','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202609131547','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202609131648','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609132112','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
   wwv_imp_workspace.create_user_access_log2$ (
     p_login_name => 'OFS_WORKSPACE_ADMIN',
     p_auth_method => 'Internal Authentication',
     p_app => 4100,
     p_owner => 'APEX_260100',
-    p_access_date => to_date('202609141246','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_ADMIN',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609141258','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202609091810','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610200947','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -2055,20 +1406,7 @@ begin
     p_auth_method => 'Internal Authentication',
     p_app => 4100,
     p_owner => 'APEX_260100',
-    p_access_date => to_date('202609101352','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202609101352','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610201040','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -2081,72 +1419,7 @@ begin
     p_auth_method => 'Internal Authentication',
     p_app => 4100,
     p_owner => 'APEX_260100',
-    p_access_date => to_date('202609101353','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202609101353','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609101359','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Oracle APEX Accounts',
-    p_app => 100,
-    p_owner => 'OFS_APP',
-    p_access_date => to_date('202609101400','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609131546','YYYYMMDDHH24MI'),
-    p_ip_address => '172.18.0.1',
-    p_remote_user => 'APEX_PUBLIC_USER',
-    p_auth_result => 0,
-    p_custom_status_text => '');
-end;
-/
-begin
-  wwv_imp_workspace.create_user_access_log2$ (
-    p_login_name => 'OFS_WORKSPACE_DEVELOPER1',
-    p_auth_method => 'Internal Authentication',
-    p_app => 4100,
-    p_owner => 'APEX_260100',
-    p_access_date => to_date('202609141238','YYYYMMDDHH24MI'),
+    p_access_date => to_date('202610201043','YYYYMMDDHH24MI'),
     p_ip_address => '172.18.0.1',
     p_remote_user => 'APEX_PUBLIC_USER',
     p_auth_result => 0,
@@ -2272,12 +1545,38 @@ prompt ...workspace objects
  
 begin
 wwv_imp_workspace.create_credential(
- p_id=>15005800310189807
+ p_id=>15977325645815458
 ,p_name=>'Credentials for gemini_ai_service'
 ,p_static_id=>'credentials-for-gemini-ai-service'
 ,p_authentication_type=>'HTTP_HEADER'
 ,p_valid_for_urls=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'https://generativelanguage.googleapis.com/v1beta',
+''))
+,p_prompt_on_install=>true
+);
+end;
+/
+begin
+wwv_imp_workspace.create_credential(
+ p_id=>17607083273009743
+,p_name=>'Credentials for ollama_ai_service'
+,p_static_id=>'credentials-for-ollama-ai-service'
+,p_authentication_type=>'HTTP_HEADER'
+,p_valid_for_urls=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'http://host.docker.internal:11434',
+''))
+,p_prompt_on_install=>true
+);
+end;
+/
+begin
+wwv_imp_workspace.create_credential(
+ p_id=>17608504325138194
+,p_name=>'Credentials for openai_ai_service'
+,p_static_id=>'credentials-for-openai-ai-service'
+,p_authentication_type=>'HTTP_HEADER'
+,p_valid_for_urls=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'https://api.openai.com/v1',
 ''))
 ,p_prompt_on_install=>true
 );
@@ -2295,13 +1594,13 @@ end;
 /
 begin
 wwv_imp_workspace.create_remote_server(
- p_id=>15006250274189811
+ p_id=>15977714074815458
 ,p_name=>'Gemini_AI_Service'
 ,p_static_id=>'gemini-ai-service'
 ,p_base_url=>nvl(wwv_flow_application_install.get_remote_server_base_url('gemini-ai-service'),'https://generativelanguage.googleapis.com/v1beta')
 ,p_https_host=>nvl(wwv_flow_application_install.get_remote_server_https_host('gemini-ai-service'),'')
 ,p_server_type=>'GENERATIVE_AI'
-,p_credential_id=>15005800310189807
+,p_credential_id=>15977325645815458
 ,p_ai_provider_type=>'GEMINI'
 ,p_ai_is_builder_service=>false
 ,p_ai_is_default_for_new_apps=>false
@@ -2334,6 +1633,7 @@ wwv_imp_workspace.create_remote_server(
 ,p_base_url=>nvl(wwv_flow_application_install.get_remote_server_base_url('ollama-ai-service'),'http://host.docker.internal:11434')
 ,p_https_host=>nvl(wwv_flow_application_install.get_remote_server_https_host('ollama-ai-service'),'')
 ,p_server_type=>'GENERATIVE_AI'
+,p_credential_id=>17607083273009743
 ,p_ai_provider_type=>'OLLAMA'
 ,p_ai_is_builder_service=>false
 ,p_ai_is_default_for_new_apps=>true
@@ -2341,6 +1641,26 @@ wwv_imp_workspace.create_remote_server(
 ,p_ai_http_headers=>nvl(wwv_flow_application_install.get_remote_server_ai_headers('ollama-ai-service'),'')
 ,p_ai_attributes=>nvl(wwv_flow_application_install.get_remote_server_ai_attrs('ollama-ai-service'),'')
 ,p_ai_max_tokens=>nvl(wwv_flow_application_install.get_remote_server_ai_maxtokens('ollama-ai-service'),'')
+,p_prompt_on_install=>false
+);
+end;
+/
+begin
+wwv_imp_workspace.create_remote_server(
+ p_id=>17608927170138195
+,p_name=>'OpenAI_AI_Service'
+,p_static_id=>'openai-ai-service'
+,p_base_url=>nvl(wwv_flow_application_install.get_remote_server_base_url('openai-ai-service'),'https://api.openai.com/v1')
+,p_https_host=>nvl(wwv_flow_application_install.get_remote_server_https_host('openai-ai-service'),'')
+,p_server_type=>'GENERATIVE_AI'
+,p_credential_id=>17608504325138194
+,p_ai_provider_type=>'OPENAI'
+,p_ai_is_builder_service=>false
+,p_ai_is_default_for_new_apps=>false
+,p_ai_model_name=>nvl(wwv_flow_application_install.get_remote_server_ai_model('openai-ai-service'),'gpt-6-luna')
+,p_ai_http_headers=>nvl(wwv_flow_application_install.get_remote_server_ai_headers('openai-ai-service'),'')
+,p_ai_attributes=>nvl(wwv_flow_application_install.get_remote_server_ai_attrs('openai-ai-service'),'')
+,p_ai_max_tokens=>nvl(wwv_flow_application_install.get_remote_server_ai_maxtokens('openai-ai-service'),'')
 ,p_prompt_on_install=>false
 );
 end;
@@ -2377,13 +1697,13 @@ end;
 prompt  SCHEMA OFS_APP - User Interface Defaults, Table Defaults
 --
 -- Import using sqlplus as the Oracle user: APEX_260100
--- Exported 14:01 Monday September 14, 2026 by: ADMIN
+-- Exported 12:53 Tuesday October 20, 2026 by: ADMIN
 --
  
 --------------------------------------------------------------------
 prompt User Interface Defaults, Attribute Dictionary
 --
--- Exported 14:01 Monday September 14, 2026 by: ADMIN
+-- Exported 12:53 Tuesday October 20, 2026 by: ADMIN
 --
 -- SHOW EXPORTING WORKSPACE
  

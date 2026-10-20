@@ -33,7 +33,7 @@ prompt APPLICATION 100 - OFS_APPLICATION
 -- Application Export:
 --   Application:     100
 --   Name:            OFS_APPLICATION
---   Date and Time:   14:00 Monday September 14, 2026
+--   Date and Time:   12:54 Tuesday October 20, 2026
 --   Exported By:     OFS_WORKSPACE_ADMIN
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -42,7 +42,7 @@ prompt APPLICATION 100 - OFS_APPLICATION
 --       Processes:               14
 --       Regions:                 29
 --       Buttons:                 16
---       Dynamic Actions:          3
+--       Dynamic Actions:          4
 --     Shared Components:
 --       Logic:
 --         Build Options:          1
@@ -107,12 +107,12 @@ wwv_imp_workspace.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'OFS_APPLICATION'
 ,p_created_on=>wwv_flow_imp.dz('20260716155656Z')
-,p_last_updated_on=>wwv_flow_imp.dz('20260914135557Z')
+,p_last_updated_on=>wwv_flow_imp.dz('20261020125029Z')
 ,p_created_by=>'OFS_WORKSPACE_ADMIN'
-,p_last_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_last_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 ,p_file_prefix=>nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>2461238155657
-,p_version_scn=>'64958821'
+,p_version_scn=>'86297536'
 ,p_print_server_type=>'NATIVE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'Y'
@@ -140,7 +140,7 @@ end;
 prompt --workspace/credentials/credentials_for_gemini_ai_service
 begin
 wwv_imp_workspace.create_credential(
- p_id=>15005800310189807
+ p_id=>15977325645815458
 ,p_name=>'Credentials for gemini_ai_service'
 ,p_static_id=>'credentials-for-gemini-ai-service'
 ,p_authentication_type=>'HTTP_HEADER'
@@ -148,8 +148,26 @@ wwv_imp_workspace.create_credential(
 'https://generativelanguage.googleapis.com/v1beta',
 ''))
 ,p_prompt_on_install=>true
-,p_created_on=>wwv_flow_imp.dz('20260910143010Z')
-,p_updated_on=>wwv_flow_imp.dz('20260910143010Z')
+,p_created_on=>wwv_flow_imp.dz('20260914145842Z')
+,p_updated_on=>wwv_flow_imp.dz('20260914145842Z')
+,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
+);
+end;
+/
+prompt --workspace/credentials/credentials_for_ollama_ai_service
+begin
+wwv_imp_workspace.create_credential(
+ p_id=>17607083273009743
+,p_name=>'Credentials for ollama_ai_service'
+,p_static_id=>'credentials-for-ollama-ai-service'
+,p_authentication_type=>'HTTP_HEADER'
+,p_valid_for_urls=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'http://host.docker.internal:11434',
+''))
+,p_prompt_on_install=>true
+,p_created_on=>wwv_flow_imp.dz('20261014184851Z')
+,p_updated_on=>wwv_flow_imp.dz('20261014184851Z')
 ,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
 ,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
@@ -173,13 +191,13 @@ end;
 prompt --workspace/remote_servers/gemini_ai_service
 begin
 wwv_imp_workspace.create_remote_server(
- p_id=>15006250274189811
+ p_id=>15977714074815458
 ,p_name=>'Gemini_AI_Service'
 ,p_static_id=>'gemini-ai-service'
 ,p_base_url=>nvl(wwv_flow_application_install.get_remote_server_base_url('gemini-ai-service'),'https://generativelanguage.googleapis.com/v1beta')
 ,p_https_host=>nvl(wwv_flow_application_install.get_remote_server_https_host('gemini-ai-service'),'')
 ,p_server_type=>'GENERATIVE_AI'
-,p_credential_id=>15005800310189807
+,p_credential_id=>15977325645815458
 ,p_ai_provider_type=>'GEMINI'
 ,p_ai_is_builder_service=>false
 ,p_ai_is_default_for_new_apps=>false
@@ -188,8 +206,8 @@ wwv_imp_workspace.create_remote_server(
 ,p_ai_attributes=>nvl(wwv_flow_application_install.get_remote_server_ai_attrs('gemini-ai-service'),'')
 ,p_ai_max_tokens=>nvl(wwv_flow_application_install.get_remote_server_ai_maxtokens('gemini-ai-service'),'')
 ,p_prompt_on_install=>false
-,p_created_on=>wwv_flow_imp.dz('20260910143010Z')
-,p_updated_on=>wwv_flow_imp.dz('20260910143010Z')
+,p_created_on=>wwv_flow_imp.dz('20260914145842Z')
+,p_updated_on=>wwv_flow_imp.dz('20260914145842Z')
 ,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
 ,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
@@ -222,6 +240,7 @@ wwv_imp_workspace.create_remote_server(
 ,p_base_url=>nvl(wwv_flow_application_install.get_remote_server_base_url('ollama-ai-service'),'http://host.docker.internal:11434')
 ,p_https_host=>nvl(wwv_flow_application_install.get_remote_server_https_host('ollama-ai-service'),'')
 ,p_server_type=>'GENERATIVE_AI'
+,p_credential_id=>17607083273009743
 ,p_ai_provider_type=>'OLLAMA'
 ,p_ai_is_builder_service=>false
 ,p_ai_is_default_for_new_apps=>true
@@ -231,7 +250,7 @@ wwv_imp_workspace.create_remote_server(
 ,p_ai_max_tokens=>nvl(wwv_flow_application_install.get_remote_server_ai_maxtokens('ollama-ai-service'),'')
 ,p_prompt_on_install=>false
 ,p_created_on=>wwv_flow_imp.dz('20260909191627Z')
-,p_updated_on=>wwv_flow_imp.dz('20260909191627Z')
+,p_updated_on=>wwv_flow_imp.dz('20261014193326Z')
 ,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
 ,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
@@ -676,9 +695,9 @@ wwv_flow_imp_shared.create_ai_agent(
 'Use the available tools whenever database information or booking actions are required.',
 'Do not invent movie, showtime, seat, or booking information.'))
 ,p_welcome_message=>'Hello! I can help you search movies, find showtimes, book tickets, and cancel bookings.'
-,p_version_scn=>'SH256:SpCePwb5cfKXnZJ4Q3RKHV5iVndYTFEZGKGOOfyWbO4'
+,p_version_scn=>'SH256:Zx4Glv_I59mndRKusnIW5cbQY7jorhdLmzeaZW300lk'
 ,p_created_on=>wwv_flow_imp.dz('20260913175011Z')
-,p_updated_on=>wwv_flow_imp.dz('20260913210032Z')
+,p_updated_on=>wwv_flow_imp.dz('20261020125010Z')
 ,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
 ,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
@@ -693,9 +712,26 @@ wwv_flow_imp_shared.create_ai_agent_tool(
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'language', 'PLSQL',
   'plsql_code', wwv_flow_string.join(wwv_flow_t_varchar2(
+    '',
     'DECLARE',
     '    l_result CLOB;',
     'BEGIN',
+    '    /*',
+    '    apex_debug.error(''AI TOOL DEBUG - SHOWTIME_ID=[''',
+    '        || COALESCE(TO_CHAR(:SHOWTIME_ID), ''NULL'') || '']'');',
+    '',
+    '    apex_debug.error(''AI TOOL DEBUG - CUSTOMER_NAME=[''',
+    '        || COALESCE(:CUSTOMER_NAME, ''NULL'') || '']'');',
+    '',
+    '    apex_debug.error(''AI TOOL DEBUG - CUSTOMER_EMAIL=[''',
+    '        || COALESCE(:CUSTOMER_EMAIL, ''NULL'') || '']'');',
+    '',
+    '    apex_debug.error(''AI TOOL DEBUG - SEAT_COUNT=[''',
+    '        || COALESCE(TO_CHAR(:SEAT_COUNT), ''NULL'') || '']'');',
+    '    ',
+    '    apex_debug.info(',
+    '    ''SEAT_COUNT=['' || COALESCE(TO_CHAR(:SEAT_COUNT), ''NULL'') || '']'');        ',
+    '    */',
     '    book_movie_tickets(',
     '        p_showtime_id     => :SHOWTIME_ID,',
     '        p_customer_name   => :CUSTOMER_NAME,',
@@ -705,9 +741,10 @@ wwv_flow_imp_shared.create_ai_agent_tool(
     '    );',
     '',
     '    apex_ai.set_tool_result(l_result);',
-    'END;')))).to_clob
+    'END;',
+    '')))).to_clob
 ,p_created_on=>wwv_flow_imp.dz('20260913200047Z')
-,p_updated_on=>wwv_flow_imp.dz('20260913204914Z')
+,p_updated_on=>wwv_flow_imp.dz('20261020125010Z')
 ,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
 ,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
@@ -736,11 +773,11 @@ wwv_flow_imp_shared.create_ai_agent_tool_param(
 wwv_flow_imp_shared.create_ai_agent_tool_param(
  p_id=>wwv_flow_imp.id(15423624854783485)
 ,p_param_name=>'SEAT_COUNT'
-,p_description=>'The number of tickets or seats to book. The exact number of tickets to book. Must be a numeric value only, such as 1, 2, or 3. Do not include words such as "tickets" or "seats".'
+,p_description=>'The number of seats to book. Return a single positive integer, for example 1, 2, or 3. The value must be a JSON number, not a string. Do not include any text or units.'
 ,p_data_type=>'NUMBER'
 ,p_is_required=>true
 ,p_created_on=>wwv_flow_imp.dz('20260913200048Z')
-,p_updated_on=>wwv_flow_imp.dz('20260913204914Z')
+,p_updated_on=>wwv_flow_imp.dz('20261020122052Z')
 ,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
 ,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
@@ -817,7 +854,7 @@ wwv_flow_imp_shared.create_ai_agent_tool(
     'END;')),
   'type', 'FUNCTION_BODY')).to_clob
 ,p_created_on=>wwv_flow_imp.dz('20260913195230Z')
-,p_updated_on=>wwv_flow_imp.dz('20260913204351Z')
+,p_updated_on=>wwv_flow_imp.dz('20260914151112Z')
 ,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
 ,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
@@ -934,10 +971,10 @@ wwv_flow_imp_shared.create_ai_agent(
  p_id=>wwv_flow_imp.id(15408176787618765)
 ,p_name=>'Test_Gemini_Agent'
 ,p_static_id=>'test-gemini-agent'
-,p_remote_server_id=>15006250274189811
-,p_version_scn=>'SH256:EOhlfSFvQQF5DbfjexToKkGUqsKdIwslYuVLX07WPbM'
+,p_remote_server_id=>15977714074815458
+,p_version_scn=>'SH256:oo58u7N5Wh5xDMl1567v1H5mWzi-jbzm7ztErMA7NmY'
 ,p_created_on=>wwv_flow_imp.dz('20260913164232Z')
-,p_updated_on=>wwv_flow_imp.dz('20260913164232Z')
+,p_updated_on=>wwv_flow_imp.dz('20260914145921Z')
 ,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
 ,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
@@ -5349,9 +5386,9 @@ wwv_flow_imp_page.create_page(
 ,p_protection_level=>'C'
 ,p_page_component_map=>'21'
 ,p_created_on=>wwv_flow_imp.dz('20260913163253Z')
-,p_last_updated_on=>wwv_flow_imp.dz('20260914135557Z')
+,p_last_updated_on=>wwv_flow_imp.dz('20261020125029Z')
 ,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
-,p_last_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_last_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(14611648812527640)
@@ -5410,9 +5447,9 @@ wwv_flow_imp_page.create_page_plug(
 ,p_prn_page_footer_alignment=>'CENTER'
 ,p_prn_border_color=>'#666666'
 ,p_created_on=>wwv_flow_imp.dz('20260914133456Z')
-,p_updated_on=>wwv_flow_imp.dz('20260914133456Z')
+,p_updated_on=>wwv_flow_imp.dz('20261020104605Z')
 ,p_created_by=>'OFS_WORKSPACE_ADMIN'
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_region_column(
  p_id=>wwv_flow_imp.id(15948675164328214)
@@ -5682,8 +5719,8 @@ wwv_flow_imp_page.create_interactive_grid(
 ,p_fixed_header=>'PAGE'
 ,p_show_icon_view=>false
 ,p_show_detail_view=>false
-,p_updated_on=>wwv_flow_imp.dz('20260914133456Z')
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_on=>wwv_flow_imp.dz('20261020104605Z')
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_ig_report(
  p_id=>wwv_flow_imp.id(15960433917335019)
@@ -5693,8 +5730,8 @@ wwv_flow_imp_page.create_ig_report(
 ,p_default_view=>'GRID'
 ,p_show_row_number=>false
 ,p_settings_area_expanded=>true
-,p_updated_on=>wwv_flow_imp.dz('20260914133456Z')
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_on=>wwv_flow_imp.dz('20261020104605Z')
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_ig_report_view(
  p_id=>wwv_flow_imp.id(15960554703335020)
@@ -5712,6 +5749,10 @@ wwv_flow_imp_page.create_ig_report_column(
 ,p_column_id=>wwv_flow_imp.id(15948041822328208)
 ,p_is_visible=>true
 ,p_is_frozen=>false
+,p_width=>66.875
+,p_sort_order=>1
+,p_sort_direction=>'ASC'
+,p_sort_nulls=>'LAST'
 );
 wwv_flow_imp_page.create_ig_report_column(
  p_id=>wwv_flow_imp.id(15961943260335022)
@@ -5720,6 +5761,7 @@ wwv_flow_imp_page.create_ig_report_column(
 ,p_column_id=>wwv_flow_imp.id(15948109851328209)
 ,p_is_visible=>true
 ,p_is_frozen=>false
+,p_width=>105.875
 );
 wwv_flow_imp_page.create_ig_report_column(
  p_id=>wwv_flow_imp.id(15962879045335023)
@@ -5809,9 +5851,9 @@ wwv_flow_imp_page.create_page_plug(
 ,p_prn_page_footer_alignment=>'CENTER'
 ,p_prn_border_color=>'#666666'
 ,p_created_on=>wwv_flow_imp.dz('20260914133311Z')
-,p_updated_on=>wwv_flow_imp.dz('20260914133311Z')
+,p_updated_on=>wwv_flow_imp.dz('20261020104243Z')
 ,p_created_by=>'OFS_WORKSPACE_ADMIN'
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_region_column(
  p_id=>wwv_flow_imp.id(15858986211301344)
@@ -6018,8 +6060,8 @@ wwv_flow_imp_page.create_interactive_grid(
 ,p_fixed_header=>'PAGE'
 ,p_show_icon_view=>false
 ,p_show_detail_view=>false
-,p_updated_on=>wwv_flow_imp.dz('20260914133311Z')
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_on=>wwv_flow_imp.dz('20261020104243Z')
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_ig_report(
  p_id=>wwv_flow_imp.id(15941351445324898)
@@ -6029,8 +6071,8 @@ wwv_flow_imp_page.create_ig_report(
 ,p_default_view=>'GRID'
 ,p_show_row_number=>false
 ,p_settings_area_expanded=>true
-,p_updated_on=>wwv_flow_imp.dz('20260914133311Z')
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_on=>wwv_flow_imp.dz('20261020104243Z')
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_ig_report_view(
  p_id=>wwv_flow_imp.id(15941476472324898)
@@ -6048,6 +6090,10 @@ wwv_flow_imp_page.create_ig_report_column(
 ,p_column_id=>wwv_flow_imp.id(15858602741301341)
 ,p_is_visible=>true
 ,p_is_frozen=>false
+,p_width=>107.81200000000001
+,p_sort_order=>1
+,p_sort_direction=>'ASC'
+,p_sort_nulls=>'LAST'
 );
 wwv_flow_imp_page.create_ig_report_column(
  p_id=>wwv_flow_imp.id(15942857990324900)
@@ -6129,9 +6175,9 @@ wwv_flow_imp_page.create_page_plug(
 ,p_prn_page_footer_alignment=>'CENTER'
 ,p_prn_border_color=>'#666666'
 ,p_created_on=>wwv_flow_imp.dz('20260914133357Z')
-,p_updated_on=>wwv_flow_imp.dz('20260914133357Z')
+,p_updated_on=>wwv_flow_imp.dz('20261020104558Z')
 ,p_created_by=>'OFS_WORKSPACE_ADMIN'
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_region_column(
  p_id=>wwv_flow_imp.id(15947614726328204)
@@ -6144,7 +6190,7 @@ wwv_flow_imp_page.create_region_column(
 ,p_item_type=>'NATIVE_NUMBER_FIELD'
 ,p_heading=>'Available Seats'
 ,p_heading_alignment=>'RIGHT'
-,p_display_sequence=>60
+,p_display_sequence=>70
 ,p_value_alignment=>'RIGHT'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'number_alignment', 'left',
@@ -6159,8 +6205,8 @@ wwv_flow_imp_page.create_region_column(
 ,p_is_primary_key=>false
 ,p_duplicate_value=>true
 ,p_include_in_export=>true
-,p_updated_on=>wwv_flow_imp.dz('20260914133357Z')
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_on=>wwv_flow_imp.dz('20261014202526Z')
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_region_column(
  p_id=>wwv_flow_imp.id(15859462961301349)
@@ -6222,6 +6268,40 @@ wwv_flow_imp_page.create_region_column(
 ,p_updated_by=>'OFS_WORKSPACE_ADMIN'
 );
 wwv_flow_imp_page.create_region_column(
+ p_id=>wwv_flow_imp.id(15949193511328219)
+,p_name=>'MOVIE_TITLE'
+,p_source_type=>'SQL_EXPRESSION'
+,p_source_expression=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'SELECT CINEMA_MOVIES.TITLE',
+'FROM CINEMA_MOVIES',
+'WHERE CINEMA_MOVIES.ID = MOVIE_ID'))
+,p_data_type=>'VARCHAR2'
+,p_session_state_data_type=>'VARCHAR2'
+,p_item_type=>'NATIVE_DISPLAY_ONLY'
+,p_heading=>'Movie Title'
+,p_heading_alignment=>'LEFT'
+,p_display_sequence=>30
+,p_value_alignment=>'LEFT'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'based_on', 'LOV',
+  'format', 'PLAIN')).to_clob
+,p_lov_type=>'SHARED'
+,p_lov_id=>wwv_flow_imp.id(6819600523167395)
+,p_lov_display_extra=>true
+,p_enable_filter=>true
+,p_filter_operators=>'C:S:CASE_INSENSITIVE:REGEXP'
+,p_filter_text_case=>'MIXED'
+,p_filter_exact_match=>true
+,p_filter_lov_type=>'LOV'
+,p_use_as_row_header=>false
+,p_enable_sort_group=>true
+,p_enable_control_break=>true
+,p_enable_hide=>true
+,p_include_in_export=>true
+,p_updated_on=>wwv_flow_imp.dz('20261020103637Z')
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
+);
+wwv_flow_imp_page.create_region_column(
  p_id=>wwv_flow_imp.id(15947382309328201)
 ,p_name=>'SHOW_DATE'
 ,p_source_type=>'DB_COLUMN'
@@ -6232,7 +6312,7 @@ wwv_flow_imp_page.create_region_column(
 ,p_item_type=>'NATIVE_DATE_PICKER_APEX'
 ,p_heading=>'Show Date'
 ,p_heading_alignment=>'LEFT'
-,p_display_sequence=>30
+,p_display_sequence=>40
 ,p_value_alignment=>'LEFT'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'display_as', 'POPUP',
@@ -6252,8 +6332,8 @@ wwv_flow_imp_page.create_region_column(
 ,p_is_primary_key=>false
 ,p_duplicate_value=>true
 ,p_include_in_export=>true
-,p_updated_on=>wwv_flow_imp.dz('20260914133357Z')
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_on=>wwv_flow_imp.dz('20261014202347Z')
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_region_column(
  p_id=>wwv_flow_imp.id(15947413509328202)
@@ -6266,7 +6346,7 @@ wwv_flow_imp_page.create_region_column(
 ,p_item_type=>'NATIVE_TEXT_FIELD'
 ,p_heading=>'Show Time'
 ,p_heading_alignment=>'LEFT'
-,p_display_sequence=>40
+,p_display_sequence=>50
 ,p_value_alignment=>'LEFT'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'trim_spaces', 'BOTH')).to_clob
@@ -6284,8 +6364,8 @@ wwv_flow_imp_page.create_region_column(
 ,p_is_primary_key=>false
 ,p_duplicate_value=>true
 ,p_include_in_export=>true
-,p_updated_on=>wwv_flow_imp.dz('20260914133357Z')
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_on=>wwv_flow_imp.dz('20261014202526Z')
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_region_column(
  p_id=>wwv_flow_imp.id(15947752910328205)
@@ -6298,7 +6378,7 @@ wwv_flow_imp_page.create_region_column(
 ,p_item_type=>'NATIVE_NUMBER_FIELD'
 ,p_heading=>'Ticket Price'
 ,p_heading_alignment=>'RIGHT'
-,p_display_sequence=>70
+,p_display_sequence=>80
 ,p_value_alignment=>'RIGHT'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'number_alignment', 'left',
@@ -6313,8 +6393,8 @@ wwv_flow_imp_page.create_region_column(
 ,p_is_primary_key=>false
 ,p_duplicate_value=>true
 ,p_include_in_export=>true
-,p_updated_on=>wwv_flow_imp.dz('20260914133357Z')
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_on=>wwv_flow_imp.dz('20261014202526Z')
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_region_column(
  p_id=>wwv_flow_imp.id(15947552352328203)
@@ -6327,7 +6407,7 @@ wwv_flow_imp_page.create_region_column(
 ,p_item_type=>'NATIVE_NUMBER_FIELD'
 ,p_heading=>'Total Seats'
 ,p_heading_alignment=>'RIGHT'
-,p_display_sequence=>50
+,p_display_sequence=>60
 ,p_value_alignment=>'RIGHT'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'number_alignment', 'left',
@@ -6342,8 +6422,8 @@ wwv_flow_imp_page.create_region_column(
 ,p_is_primary_key=>false
 ,p_duplicate_value=>true
 ,p_include_in_export=>true
-,p_updated_on=>wwv_flow_imp.dz('20260914133357Z')
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_on=>wwv_flow_imp.dz('20261014202526Z')
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_interactive_grid(
  p_id=>wwv_flow_imp.id(15859336256301348)
@@ -6366,8 +6446,8 @@ wwv_flow_imp_page.create_interactive_grid(
 ,p_fixed_header=>'PAGE'
 ,p_show_icon_view=>false
 ,p_show_detail_view=>false
-,p_updated_on=>wwv_flow_imp.dz('20260914133357Z')
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_on=>wwv_flow_imp.dz('20261020104558Z')
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_ig_report(
  p_id=>wwv_flow_imp.id(15952949142329394)
@@ -6377,8 +6457,8 @@ wwv_flow_imp_page.create_ig_report(
 ,p_default_view=>'GRID'
 ,p_show_row_number=>false
 ,p_settings_area_expanded=>true
-,p_updated_on=>wwv_flow_imp.dz('20260914133357Z')
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_on=>wwv_flow_imp.dz('20261020104558Z')
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_ig_report_view(
  p_id=>wwv_flow_imp.id(15953048784329394)
@@ -6396,6 +6476,10 @@ wwv_flow_imp_page.create_ig_report_column(
 ,p_column_id=>wwv_flow_imp.id(15859462961301349)
 ,p_is_visible=>true
 ,p_is_frozen=>false
+,p_width=>67.875
+,p_sort_order=>1
+,p_sort_direction=>'ASC'
+,p_sort_nulls=>'LAST'
 );
 wwv_flow_imp_page.create_ig_report_column(
  p_id=>wwv_flow_imp.id(15954403331329396)
@@ -6404,11 +6488,12 @@ wwv_flow_imp_page.create_ig_report_column(
 ,p_column_id=>wwv_flow_imp.id(15859555198301350)
 ,p_is_visible=>true
 ,p_is_frozen=>false
+,p_width=>89.875
 );
 wwv_flow_imp_page.create_ig_report_column(
  p_id=>wwv_flow_imp.id(15955321957329399)
 ,p_view_id=>wwv_flow_imp.id(15953048784329394)
-,p_display_seq=>3
+,p_display_seq=>4
 ,p_column_id=>wwv_flow_imp.id(15947382309328201)
 ,p_is_visible=>true
 ,p_is_frozen=>false
@@ -6416,7 +6501,7 @@ wwv_flow_imp_page.create_ig_report_column(
 wwv_flow_imp_page.create_ig_report_column(
  p_id=>wwv_flow_imp.id(15956264800329400)
 ,p_view_id=>wwv_flow_imp.id(15953048784329394)
-,p_display_seq=>4
+,p_display_seq=>5
 ,p_column_id=>wwv_flow_imp.id(15947413509328202)
 ,p_is_visible=>true
 ,p_is_frozen=>false
@@ -6424,7 +6509,7 @@ wwv_flow_imp_page.create_ig_report_column(
 wwv_flow_imp_page.create_ig_report_column(
  p_id=>wwv_flow_imp.id(15957102697329401)
 ,p_view_id=>wwv_flow_imp.id(15953048784329394)
-,p_display_seq=>5
+,p_display_seq=>6
 ,p_column_id=>wwv_flow_imp.id(15947552352328203)
 ,p_is_visible=>true
 ,p_is_frozen=>false
@@ -6432,7 +6517,7 @@ wwv_flow_imp_page.create_ig_report_column(
 wwv_flow_imp_page.create_ig_report_column(
  p_id=>wwv_flow_imp.id(15958081319329402)
 ,p_view_id=>wwv_flow_imp.id(15953048784329394)
-,p_display_seq=>6
+,p_display_seq=>7
 ,p_column_id=>wwv_flow_imp.id(15947614726328204)
 ,p_is_visible=>true
 ,p_is_frozen=>false
@@ -6440,8 +6525,16 @@ wwv_flow_imp_page.create_ig_report_column(
 wwv_flow_imp_page.create_ig_report_column(
  p_id=>wwv_flow_imp.id(15958911640329403)
 ,p_view_id=>wwv_flow_imp.id(15953048784329394)
-,p_display_seq=>7
+,p_display_seq=>8
 ,p_column_id=>wwv_flow_imp.id(15947752910328205)
+,p_is_visible=>true
+,p_is_frozen=>false
+);
+wwv_flow_imp_page.create_ig_report_column(
+ p_id=>wwv_flow_imp.id(17804578125145484)
+,p_view_id=>wwv_flow_imp.id(15953048784329394)
+,p_display_seq=>3
+,p_column_id=>wwv_flow_imp.id(15949193511328219)
 ,p_is_visible=>true
 ,p_is_frozen=>false
 );
@@ -6459,9 +6552,9 @@ wwv_flow_imp_page.create_page_button(
 ,p_warn_on_unsaved_changes=>null
 ,p_grid_new_row=>'Y'
 ,p_created_on=>wwv_flow_imp.dz('20260913181053Z')
-,p_updated_on=>wwv_flow_imp.dz('20260914135557Z')
+,p_updated_on=>wwv_flow_imp.dz('20261020121243Z')
 ,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_component_da_action(
  p_id=>wwv_flow_imp.id(14608826223527612)
@@ -6474,9 +6567,9 @@ wwv_flow_imp_page.create_component_da_action(
   'display_as', 'DIALOG')).to_clob
 ,p_ai_agent_id=>wwv_flow_imp.id(15410619066012235)
 ,p_created_on=>wwv_flow_imp.dz('20260913181124Z')
-,p_updated_on=>wwv_flow_imp.dz('20260914135557Z')
+,p_updated_on=>wwv_flow_imp.dz('20261020121243Z')
 ,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
-,p_updated_by=>'OFS_WORKSPACE_ADMIN'
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
 wwv_flow_imp_page.create_page_button(
  p_id=>wwv_flow_imp.id(14608323268527607)
@@ -6541,6 +6634,69 @@ wwv_flow_imp_page.create_component_da_action(
 ,p_ai_agent_id=>wwv_flow_imp.id(15409408885677211)
 ,p_created_on=>wwv_flow_imp.dz('20260913165153Z')
 ,p_updated_on=>wwv_flow_imp.dz('20260913165327Z')
+,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(15949220467328220)
+,p_name=>'refresh_cinema_bookings'
+,p_static_id=>'refresh-cinema-bookings'
+,p_event_sequence=>10
+,p_bind_type=>'bind'
+,p_bind_event_type=>'ready'
+,p_created_on=>wwv_flow_imp.dz('20261020110209Z')
+,p_updated_on=>wwv_flow_imp.dz('20261020125029Z')
+,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
+,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(15949367877328221)
+,p_event_id=>wwv_flow_imp.id(15949220467328220)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_static_id=>'native-show'
+,p_action=>'NATIVE_SHOW'
+,p_affected_elements_type=>'JAVASCRIPT_EXPRESSION'
+,p_affected_elements=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'setInterval(function () {',
+'    var region = apex.region("R15947816097328206");',
+'',
+'    if (region) {',
+'        region.refresh();',
+'        console.log("Refreshed!");',
+'    } else {',
+'        console.warn("CINEMA_BOOKINGS region not found");',
+'    }',
+'}, 2000)',
+'',
+'/*',
+'console.table(',
+'  Array.from(document.querySelectorAll("[id]")).map(el => ({',
+'    id: el.id,',
+'    tag: el.tagName,',
+'    class: typeof el.className === "string" ? el.className : "",',
+'    role: el.getAttribute("role")',
+'  }))',
+');',
+'*/',
+'/*',
+'console.table(',
+'  ["R15858446544301339", "R15859252888301347", "R15947816097328206"]',
+'    .map(id => {',
+'      const r = apex.region(id);',
+'      return {',
+'        id,',
+'        title: document.querySelector("#" + id + "_heading")?.innerText,',
+'        regionType: r?.type,',
+'        widgetType: r?.widgetName',
+'      };',
+'    })',
+');',
+'',
+'*/',
+''))
+,p_created_on=>wwv_flow_imp.dz('20261020110209Z')
+,p_updated_on=>wwv_flow_imp.dz('20261020125029Z')
 ,p_created_by=>'OFS_WORKSPACE_DEVELOPER1'
 ,p_updated_by=>'OFS_WORKSPACE_DEVELOPER1'
 );
